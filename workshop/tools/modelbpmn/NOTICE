@@ -1,0 +1,6 @@
+The following files are based on the Camunda Invoice example process:
+- workshop/tools/modelbpmn/invoice.bpmn
+- testing/test_cases/baseline/fixtures/remodel_bpmn_result.bpmn
+Original source: https://github.com/camunda/camunda-bpm-platform
+Licensed under the Apache License, Version 2.0.
+See: https://www.apache.org/licenses/LICENSE-2.0

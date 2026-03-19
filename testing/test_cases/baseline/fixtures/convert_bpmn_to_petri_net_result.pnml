@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text></text>
+    </name>
+    <page id="n0">
+      <place id="source">
+        <name>
+          <text>source</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="sink">
+        <name>
+          <text>sink</text>
+        </name>
+      </place>
+      <place id="ent_Activity_1y3z4w1">
+        <name>
+          <text>ent_Activity_1y3z4w1</text>
+        </name>
+      </place>
+      <place id="ent_Activity_03r0a95">
+        <name>
+          <text>ent_Activity_03r0a95</text>
+        </name>
+      </place>
+      <place id="exi_Gateway_1erpjve">
+        <name>
+          <text>exi_Gateway_1erpjve</text>
+        </name>
+      </place>
+      <place id="exi_Gateway_1yo8rgu">
+        <name>
+          <text>exi_Gateway_1yo8rgu</text>
+        </name>
+      </place>
+      <transition id="Activity_17oso9x">
+        <name>
+          <text>Prepare Bank Transfer</text>
+        </name>
+      </transition>
+      <transition id="sfl_Flow_0qhxyo1">
+        <name>
+          <text>sfl_Flow_0qhxyo1</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="faf42d82-5291-4b85-8aa0-4d2a5773cd84"/>
+      </transition>
+      <transition id="sfl_Flow_1lt2ncs">
+        <name>
+          <text>sfl_Flow_1lt2ncs</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b509599e-12de-4fd1-a47b-6b3444cfe01f"/>
+      </transition>
+      <transition id="Activity_1ch9ukd">
+        <name>
+          <text>Assign Approver Group</text>
+        </name>
+      </transition>
+      <transition id="Activity_03r0a95">
+        <name>
+          <text>Archive Invoice</text>
+        </name>
+      </transition>
+      <transition id="Activity_15aykx1">
+        <name>
+          <text>Review Invoice</text>
+        </name>
+      </transition>
+      <transition id="Activity_1y3z4w1">
+        <name>
+          <text>Approve Invoice</text>
+        </name>
+      </transition>
+      <arc id="124835434869296" source="Activity_1ch9ukd" target="ent_Activity_1y3z4w1"/>
+      <arc id="124835434869632" source="source" target="Activity_1ch9ukd"/>
+      <arc id="124835434865040" source="exi_Gateway_1erpjve" target="sfl_Flow_1lt2ncs"/>
+      <arc id="124835434869520" source="exi_Gateway_1yo8rgu" target="Activity_17oso9x"/>
+      <arc id="124835434868512" source="sfl_Flow_1lt2ncs" target="sink"/>
+      <arc id="124835435756720" source="ent_Activity_03r0a95" target="Activity_03r0a95"/>
+      <arc id="124835434975024" source="ent_Activity_1y3z4w1" target="Activity_1y3z4w1"/>
+      <arc id="124835434868400" source="sfl_Flow_0qhxyo1" target="ent_Activity_1y3z4w1"/>
+      <arc id="124835434869184" source="Activity_1y3z4w1" target="exi_Gateway_1yo8rgu"/>
+      <arc id="124835434868176" source="Activity_03r0a95" target="sink"/>
+      <arc id="124835434516832" source="exi_Gateway_1erpjve" target="sfl_Flow_0qhxyo1"/>
+      <arc id="124835434868960" source="Activity_17oso9x" target="ent_Activity_03r0a95"/>
+      <arc id="124835434868848" source="Activity_15aykx1" target="exi_Gateway_1erpjve"/>
+      <arc id="124835434869744" source="exi_Gateway_1yo8rgu" target="Activity_15aykx1"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="sink">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

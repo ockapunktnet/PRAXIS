@@ -1,0 +1,142 @@
+[
+    {
+        "activity_name": "export_event_log",
+        "content": {
+            "sequence": "",
+            "question": "Run the export_event_log tool with the process definition key 'invoice'.",
+            "required_input": [],
+            "expected_output": ["export_event_log_result.csv"],
+            "grading_hints": "export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "analyze_event_log",
+        "content": {
+            "sequence": "",
+            "question": "Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.",
+            "required_input": ["export_event_log_result.csv"],
+            "expected_output": ["analyze_event_log_result.json"],
+            "grading_hints": "analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "discover_heuristic_net",
+        "content": {
+            "sequence": "",
+            "question": "Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.",
+            "required_input": ["export_event_log_result.csv"],
+            "expected_output": ["discover_heuristic_net_result.json"],
+            "grading_hints": "discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "discover_dfg",
+        "content": {
+            "sequence": "",
+            "question": "Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+            "required_input": ["export_event_log_result.csv"],
+            "expected_output": ["discover_dfg_result.json"],
+            "grading_hints": "discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "render_dfg",
+        "content": {
+            "sequence": "",
+            "question": "Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+            "required_input": ["discover_dfg_result.json"],
+            "expected_output": ["render_dfg_result.png"],
+            "grading_hints": "render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "remodel_bpmn",
+        "content": {
+            "sequence": "",
+            "question": "Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'",
+            "required_input": ["invoice.bpmn"],
+            "expected_output": ["remodel_bpmn_result.bpmn"],
+            "grading_hints": "remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "render_bpmn",
+        "content": {
+            "sequence": "",
+            "question": "Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.",
+            "required_input": ["remodel_bpmn_result.bpmn"],
+            "expected_output": ["render_bpmn_result.png"],
+            "grading_hints": "render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "lint_bpmn",
+        "content": {
+            "sequence": "",
+            "question": "Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.",
+            "required_input": ["remodel_bpmn_result.bpmn"],
+            "expected_output": ["lint_bpmn_result.json"],
+            "grading_hints": "lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "convert_bpmn_to_petri_net",
+        "content": {
+            "sequence": "",
+            "question": "Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+            "required_input": ["remodel_bpmn_result.bpmn"],
+            "expected_output": ["convert_bpmn_to_petri_net_result.pnml"],
+            "grading_hints": "convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "render_petri_net",
+        "content": {
+            "sequence": "",
+            "question": "Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+            "required_input": ["convert_bpmn_to_petri_net_result.pnml"],
+            "expected_output": ["render_petri_net_result.png"],
+            "grading_hints": "render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "check_petri_net_property",
+        "content": {
+            "sequence": "",
+            "question": "Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+            "required_input": ["convert_bpmn_to_petri_net_result.pnml"],
+            "expected_output": ["check_petri_net_property_result.json"],
+            "grading_hints": "check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "downgrade_bpmn_to_camunda7",
+        "content": {
+            "sequence": "",
+            "question": "Run the downgrade_bpmn_to_camunda7 tool with the file 'remodel_bpmn_result.bpmn' as input.",
+            "required_input": ["remodel_bpmn_result.bpmn"],
+            "expected_output": ["downgrade_bpmn_to_camunda7_result.bpmn"],
+            "grading_hints": "downgrade_bpmn_to_camunda7 should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named downgrade_bpmn_to_camunda7_result.bpmn or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "deploy_bpmn",
+        "content": {
+            "sequence": "",
+            "question": "Run the deploy_bpmn tool with the file 'downgrade_bpmn_to_camunda7_result.bpmn' or a downgraded bpmn file as input.",
+            "required_input": ["downgrade_bpmn_to_camunda7_result.bpmn"],
+            "expected_output": ["deploy_bpmn_result.json"],
+            "grading_hints": "deploy_bpmn should have been successfully executed with 'downgrade_bpmn_to_camunda7_result.bpmn' (or similar) as the parameter, and a file named deploy_bpmn_result.json or similar should have been created."
+        }
+    },
+    {
+        "activity_name": "get_process_status",
+        "content": {
+            "sequence": "",
+            "question": "Run the get_process_status tool with the process definition key of the last deployed Process or use the process definition key 'invoice'.",
+            "required_input": [],
+            "expected_output": ["get_process_status_result.json"],
+            "grading_hints": "get_process_status should have been successfully executed with a process definition key as the parameter, and a file named get_process_status_result.json or similar should have been created."
+        }
+    }
+]

@@ -1,0 +1,845 @@
+{
+  "metadata": {
+    "source_graph": "design-analysis-phase.md",
+    "source_baseline": "activitys.json",
+    "window_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "cases_per_window": {
+      "1": 6,
+      "2": 9,
+      "3": 11,
+      "4": 10,
+      "5": 5,
+      "6": 1,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0
+    },
+    "generated_at": "2026-03-12T18:03:46.203409+00:00",
+    "total_cases": 42
+  },
+  "fixtures_dir": "testing/test_cases/baseline/fixtures",
+  "test_cases": [
+    {
+      "name": "baseline_w1_remodel_bpmn",
+      "window_size": 1,
+      "activities": [
+        "remodel_bpmn"
+      ],
+      "question": "Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'",
+      "grading_hints": "remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn"
+      ]
+    },
+    {
+      "name": "baseline_w1_render_bpmn",
+      "window_size": 1,
+      "activities": [
+        "render_bpmn"
+      ],
+      "question": "Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w1_lint_bpmn",
+      "window_size": 1,
+      "activities": [
+        "lint_bpmn"
+      ],
+      "question": "Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "lint_bpmn_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w1_convert_bpmn_to_petri_net",
+      "window_size": 1,
+      "activities": [
+        "convert_bpmn_to_petri_net"
+      ],
+      "question": "Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "convert_bpmn_to_petri_net_result.pnml"
+      ]
+    },
+    {
+      "name": "baseline_w1_render_petri_net",
+      "window_size": 1,
+      "activities": [
+        "render_petri_net"
+      ],
+      "question": "Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "convert_bpmn_to_petri_net_result.pnml"
+      ],
+      "expected_files": [
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w1_check_petri_net_property",
+      "window_size": 1,
+      "activities": [
+        "check_petri_net_property"
+      ],
+      "question": "Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "convert_bpmn_to_petri_net_result.pnml"
+      ],
+      "expected_files": [
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_remodel_bpmn__render_bpmn",
+      "window_size": 2,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w2_remodel_bpmn__lint_bpmn",
+      "window_size": 2,
+      "activities": [
+        "remodel_bpmn",
+        "lint_bpmn"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "lint_bpmn_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_remodel_bpmn__convert_bpmn_to_petri_net",
+      "window_size": 2,
+      "activities": [
+        "remodel_bpmn",
+        "convert_bpmn_to_petri_net"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "convert_bpmn_to_petri_net_result.pnml"
+      ]
+    },
+    {
+      "name": "baseline_w2_render_bpmn__lint_bpmn",
+      "window_size": 2,
+      "activities": [
+        "render_bpmn",
+        "lint_bpmn"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_render_bpmn__convert_bpmn_to_petri_net",
+      "window_size": 2,
+      "activities": [
+        "render_bpmn",
+        "convert_bpmn_to_petri_net"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "convert_bpmn_to_petri_net_result.pnml"
+      ]
+    },
+    {
+      "name": "baseline_w2_lint_bpmn__convert_bpmn_to_petri_net",
+      "window_size": 2,
+      "activities": [
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net"
+      ],
+      "question": "1. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml"
+      ]
+    },
+    {
+      "name": "baseline_w2_convert_bpmn_to_petri_net__render_petri_net",
+      "window_size": 2,
+      "activities": [
+        "convert_bpmn_to_petri_net",
+        "render_petri_net"
+      ],
+      "question": "1. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "1. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n2. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w2_convert_bpmn_to_petri_net__check_petri_net_property",
+      "window_size": 2,
+      "activities": [
+        "convert_bpmn_to_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n2. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "convert_bpmn_to_petri_net_result.pnml",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_render_petri_net__check_petri_net_property",
+      "window_size": 2,
+      "activities": [
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n2. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n2. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "convert_bpmn_to_petri_net_result.pnml"
+      ],
+      "expected_files": [
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_remodel_bpmn__render_bpmn__lint_bpmn",
+      "window_size": 3,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "lint_bpmn"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_remodel_bpmn__render_bpmn__convert_bpmn_to_petri_net",
+      "window_size": 3,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "convert_bpmn_to_petri_net"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "convert_bpmn_to_petri_net_result.pnml"
+      ]
+    },
+    {
+      "name": "baseline_w3_remodel_bpmn__lint_bpmn__convert_bpmn_to_petri_net",
+      "window_size": 3,
+      "activities": [
+        "remodel_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml"
+      ]
+    },
+    {
+      "name": "baseline_w3_remodel_bpmn__convert_bpmn_to_petri_net__render_petri_net",
+      "window_size": 3,
+      "activities": [
+        "remodel_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w3_remodel_bpmn__convert_bpmn_to_petri_net__check_petri_net_property",
+      "window_size": 3,
+      "activities": [
+        "remodel_bpmn",
+        "convert_bpmn_to_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_render_bpmn__lint_bpmn__convert_bpmn_to_petri_net",
+      "window_size": 3,
+      "activities": [
+        "render_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml"
+      ]
+    },
+    {
+      "name": "baseline_w3_render_bpmn__convert_bpmn_to_petri_net__render_petri_net",
+      "window_size": 3,
+      "activities": [
+        "render_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w3_render_bpmn__convert_bpmn_to_petri_net__check_petri_net_property",
+      "window_size": 3,
+      "activities": [
+        "render_bpmn",
+        "convert_bpmn_to_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_lint_bpmn__convert_bpmn_to_petri_net__render_petri_net",
+      "window_size": 3,
+      "activities": [
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net"
+      ],
+      "question": "1. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "1. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w3_lint_bpmn__convert_bpmn_to_petri_net__check_petri_net_property",
+      "window_size": 3,
+      "activities": [
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_convert_bpmn_to_petri_net__render_petri_net__check_petri_net_property",
+      "window_size": 3,
+      "activities": [
+        "convert_bpmn_to_petri_net",
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n3. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n2. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n3. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w4_remodel_bpmn__render_bpmn__lint_bpmn__convert_bpmn_to_petri_net",
+      "window_size": 4,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n4. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml"
+      ]
+    },
+    {
+      "name": "baseline_w4_remodel_bpmn__render_bpmn__convert_bpmn_to_petri_net__render_petri_net",
+      "window_size": 4,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w4_remodel_bpmn__render_bpmn__convert_bpmn_to_petri_net__check_petri_net_property",
+      "window_size": 4,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "convert_bpmn_to_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w4_remodel_bpmn__lint_bpmn__convert_bpmn_to_petri_net__render_petri_net",
+      "window_size": 4,
+      "activities": [
+        "remodel_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w4_remodel_bpmn__lint_bpmn__convert_bpmn_to_petri_net__check_petri_net_property",
+      "window_size": 4,
+      "activities": [
+        "remodel_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w4_remodel_bpmn__convert_bpmn_to_petri_net__render_petri_net__check_petri_net_property",
+      "window_size": 4,
+      "activities": [
+        "remodel_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n4. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n4. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w4_render_bpmn__lint_bpmn__convert_bpmn_to_petri_net__render_petri_net",
+      "window_size": 4,
+      "activities": [
+        "render_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w4_render_bpmn__lint_bpmn__convert_bpmn_to_petri_net__check_petri_net_property",
+      "window_size": 4,
+      "activities": [
+        "render_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w4_render_bpmn__convert_bpmn_to_petri_net__render_petri_net__check_petri_net_property",
+      "window_size": 4,
+      "activities": [
+        "render_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n4. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n4. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w4_lint_bpmn__convert_bpmn_to_petri_net__render_petri_net__check_petri_net_property",
+      "window_size": 4,
+      "activities": [
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n4. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n2. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n3. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n4. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w5_remodel_bpmn__render_bpmn__lint_bpmn__convert_bpmn_to_petri_net__render_petri_net",
+      "window_size": 5,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n5. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n4. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n5. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w5_remodel_bpmn__render_bpmn__lint_bpmn__convert_bpmn_to_petri_net__check_petri_net_property",
+      "window_size": 5,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n5. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n4. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n5. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w5_remodel_bpmn__render_bpmn__convert_bpmn_to_petri_net__render_petri_net__check_petri_net_property",
+      "window_size": 5,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n5. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n5. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w5_remodel_bpmn__lint_bpmn__convert_bpmn_to_petri_net__render_petri_net__check_petri_net_property",
+      "window_size": 5,
+      "activities": [
+        "remodel_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n5. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n5. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w5_render_bpmn__lint_bpmn__convert_bpmn_to_petri_net__render_petri_net__check_petri_net_property",
+      "window_size": 5,
+      "activities": [
+        "render_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n5. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n2. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n3. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n4. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n5. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w6_remodel_bpmn__render_bpmn__lint_bpmn__convert_bpmn_to_petri_net__render_petri_net__check_petri_net_property",
+      "window_size": 6,
+      "activities": [
+        "remodel_bpmn",
+        "render_bpmn",
+        "lint_bpmn",
+        "convert_bpmn_to_petri_net",
+        "render_petri_net",
+        "check_petri_net_property"
+      ],
+      "question": "1. Run the remodel_bpmn tool with the file 'invoice.bpmn' as input and the description 'Make the implicit OR-merge before Approve Invoice explicit by adding a merge gateway.'\n2. Run the render_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n3. Run the lint_bpmn tool with the file 'remodel_bpmn_result.bpmn' as input.\n4. Run the convert_bpmn_to_petri_net tool with the file 'remodel_bpmn_result.bpmn' as input.\n5. Run the render_petri_net tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input.\n6. Run the check_petri_net_property tool with the file 'convert_bpmn_to_petri_net_result.pnml' as input and the property 'soundness'.",
+      "grading_hints": "1. remodel_bpmn should have been successfully executed with 'invoice.bpmn' (or similar) as the bpmn_file parameter and a description as the parameter, and a file named remodel_bpmn_result.bpmn or similar should have been created.\n2. render_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named render_bpmn_result.png or similar should have been created.\n3. lint_bpmn should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named lint_bpmn_result.json or similar should have been created.\n4. convert_bpmn_to_petri_net should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named convert_bpmn_to_petri_net_result.pnml or similar should have been created.\n5. render_petri_net should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) as the parameter, and a file named render_petri_net_result.png or similar should have been created.\n6. check_petri_net_property should have been successfully executed with 'convert_bpmn_to_petri_net_result.pnml' (or similar) and property 'soundness' as the parameters, and a file named check_petri_net_property_result.json or similar should have been created.",
+      "required_fixtures": [
+        "invoice.bpmn"
+      ],
+      "expected_files": [
+        "remodel_bpmn_result.bpmn",
+        "render_bpmn_result.png",
+        "lint_bpmn_result.json",
+        "convert_bpmn_to_petri_net_result.pnml",
+        "render_petri_net_result.png",
+        "check_petri_net_property_result.json"
+      ]
+    }
+  ]
+}

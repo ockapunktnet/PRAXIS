@@ -1,0 +1,198 @@
+{
+  "edges": [
+    {
+      "source": "Invoice\nreceived",
+      "target": "Invoice\nreceived",
+      "frequency": 16
+    },
+    {
+      "source": "Invoice\nreceived",
+      "target": "Assign Approver Group",
+      "frequency": 16
+    },
+    {
+      "source": "Assign Approver Group",
+      "target": "Assign Approver Group",
+      "frequency": 16
+    },
+    {
+      "source": "Assign Approver Group",
+      "target": "Approve Invoice",
+      "frequency": 16
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Approve Invoice",
+      "frequency": 10
+    },
+    {
+      "source": "Invoice\napproved?",
+      "target": "Invoice\napproved?",
+      "frequency": 10
+    },
+    {
+      "source": "Review Invoice",
+      "target": "Review Invoice",
+      "frequency": 8
+    },
+    {
+      "source": "StartEvent_1",
+      "target": "StartEvent_1",
+      "frequency": 6
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Invoice\napproved?",
+      "frequency": 5
+    },
+    {
+      "source": "StartEvent_1",
+      "target": "Assign Reviewer",
+      "frequency": 4
+    },
+    {
+      "source": "Assign Reviewer",
+      "target": "Assign Reviewer",
+      "frequency": 4
+    },
+    {
+      "source": "Assign Reviewer",
+      "target": "Review Invoice",
+      "frequency": 4
+    },
+    {
+      "source": "Review Invoice",
+      "target": "EndEvent_1og1zom",
+      "frequency": 4
+    },
+    {
+      "source": "EndEvent_1og1zom",
+      "target": "EndEvent_1og1zom",
+      "frequency": 4
+    },
+    {
+      "source": "Invoice\napproved?",
+      "target": "Review Invoice",
+      "frequency": 4
+    },
+    {
+      "source": "Invoice not\nprocessed",
+      "target": "Invoice not\nprocessed",
+      "frequency": 4
+    },
+    {
+      "source": "Review\nsuccessful?",
+      "target": "Review\nsuccessful?",
+      "frequency": 4
+    },
+    {
+      "source": "Review Invoice",
+      "target": "Invoice not\nprocessed",
+      "frequency": 3
+    },
+    {
+      "source": "Invoice not\nprocessed",
+      "target": "Review\nsuccessful?",
+      "frequency": 3
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Prepare\nBank\nTransfer",
+      "frequency": 2
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Review Invoice",
+      "frequency": 2
+    },
+    {
+      "source": "Review Invoice",
+      "target": "Invoice\napproved?",
+      "frequency": 2
+    },
+    {
+      "source": "Assign Reviewer",
+      "target": "StartEvent_1",
+      "frequency": 2
+    },
+    {
+      "source": "Notify Creditor",
+      "target": "Notify Creditor",
+      "frequency": 2
+    },
+    {
+      "source": "Notify Creditor",
+      "target": "Invoice\napproved?",
+      "frequency": 2
+    },
+    {
+      "source": "Invoice\napproved?",
+      "target": "Prepare\nBank\nTransfer",
+      "frequency": 2
+    },
+    {
+      "source": "Prepare\nBank\nTransfer",
+      "target": "Prepare\nBank\nTransfer",
+      "frequency": 2
+    },
+    {
+      "source": "Prepare\nBank\nTransfer",
+      "target": "Archive Invoice",
+      "frequency": 2
+    },
+    {
+      "source": "Archive Invoice",
+      "target": "Archive Invoice",
+      "frequency": 2
+    },
+    {
+      "source": "Archive Invoice",
+      "target": "Invoice\nprocessed",
+      "frequency": 2
+    },
+    {
+      "source": "Invoice\nprocessed",
+      "target": "Invoice\nprocessed",
+      "frequency": 2
+    },
+    {
+      "source": "Prepare\nBank\nTransfer",
+      "target": "Invoice\napproved?",
+      "frequency": 1
+    },
+    {
+      "source": "Prepare\nBank\nTransfer",
+      "target": "Notify Creditor",
+      "frequency": 1
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Notify Creditor",
+      "frequency": 1
+    },
+    {
+      "source": "Review Invoice",
+      "target": "Review\nsuccessful?",
+      "frequency": 1
+    },
+    {
+      "source": "Review\nsuccessful?",
+      "target": "Invoice not\nprocessed",
+      "frequency": 1
+    }
+  ],
+  "start_activities": {
+    "Invoice\nreceived": 16,
+    "Assign Reviewer": 2,
+    "StartEvent_1": 4
+  },
+  "end_activities": {
+    "Approve Invoice": 6,
+    "Invoice\napproved?": 4,
+    "StartEvent_1": 2,
+    "EndEvent_1og1zom": 4,
+    "Review\nsuccessful?": 3,
+    "Invoice\nprocessed": 2,
+    "Invoice not\nprocessed": 1
+  }
+}

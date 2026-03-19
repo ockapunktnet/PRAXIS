@@ -1,0 +1,49 @@
+{
+  "num_cases": 22,
+  "num_activities": 14,
+  "num_events": 192,
+  "activities": [
+    "Invoice\nreceived",
+    "Assign Approver Group",
+    "Approve Invoice",
+    "Prepare\nBank\nTransfer",
+    "Invoice\napproved?",
+    "Review Invoice",
+    "Assign Reviewer",
+    "StartEvent_1",
+    "Notify Creditor",
+    "EndEvent_1og1zom",
+    "Invoice not\nprocessed",
+    "Review\nsuccessful?",
+    "Archive Invoice",
+    "Invoice\nprocessed"
+  ],
+  "activity_frequencies": {
+    "Invoice\nreceived": 32,
+    "Assign Approver Group": 32,
+    "Approve Invoice": 26,
+    "Invoice\napproved?": 20,
+    "Review Invoice": 18,
+    "StartEvent_1": 12,
+    "Assign Reviewer": 10,
+    "Review\nsuccessful?": 8,
+    "EndEvent_1og1zom": 8,
+    "Invoice not\nprocessed": 8,
+    "Prepare\nBank\nTransfer": 6,
+    "Notify Creditor": 4,
+    "Archive Invoice": 4,
+    "Invoice\nprocessed": 4
+  },
+  "top_variants": {
+    "Invoice\nreceived -> Invoice\nreceived -> Assign Approver Group -> Assign Approver Group -> Approve Invoice": 6,
+    "StartEvent_1 -> StartEvent_1 -> Assign Reviewer -> Assign Reviewer -> Review Invoice -> Review Invoice -> EndEvent_1og1zom -> EndEvent_1og1zom": 4,
+    "Invoice\nreceived -> Invoice\nreceived -> Assign Approver Group -> Assign Approver Group -> Approve Invoice -> Approve Invoice -> Invoice\napproved? -> Invoice\napproved? -> Review Invoice -> Review Invoice -> Invoice not\nprocessed -> Invoice not\nprocessed -> Review\nsuccessful? -> Review\nsuccessful?": 3,
+    "Assign Reviewer -> StartEvent_1 -> StartEvent_1": 2,
+    "Invoice\nreceived -> Invoice\nreceived -> Assign Approver Group -> Assign Approver Group -> Approve Invoice -> Approve Invoice -> Review Invoice -> Invoice\napproved? -> Invoice\napproved?": 2,
+    "Invoice\nreceived -> Invoice\nreceived -> Assign Approver Group -> Assign Approver Group -> Approve Invoice -> Approve Invoice -> Prepare\nBank\nTransfer -> Invoice\napproved? -> Invoice\napproved?": 1,
+    "Invoice\nreceived -> Invoice\nreceived -> Assign Approver Group -> Assign Approver Group -> Approve Invoice -> Approve Invoice -> Prepare\nBank\nTransfer -> Notify Creditor -> Notify Creditor -> Invoice\napproved? -> Invoice\napproved?": 1,
+    "Invoice\nreceived -> Invoice\nreceived -> Assign Approver Group -> Assign Approver Group -> Approve Invoice -> Approve Invoice -> Notify Creditor -> Notify Creditor -> Invoice\napproved? -> Invoice\napproved? -> Prepare\nBank\nTransfer -> Prepare\nBank\nTransfer -> Archive Invoice -> Archive Invoice -> Invoice\nprocessed -> Invoice\nprocessed": 1,
+    "Invoice\nreceived -> Invoice\nreceived -> Assign Approver Group -> Assign Approver Group -> Approve Invoice -> Approve Invoice -> Invoice\napproved? -> Invoice\napproved? -> Prepare\nBank\nTransfer -> Prepare\nBank\nTransfer -> Archive Invoice -> Archive Invoice -> Invoice\nprocessed -> Invoice\nprocessed": 1,
+    "Invoice\nreceived -> Invoice\nreceived -> Assign Approver Group -> Assign Approver Group -> Approve Invoice -> Approve Invoice -> Invoice\napproved? -> Invoice\napproved? -> Review Invoice -> Review Invoice -> Review\nsuccessful? -> Review\nsuccessful? -> Invoice not\nprocessed -> Invoice not\nprocessed": 1
+  }
+}

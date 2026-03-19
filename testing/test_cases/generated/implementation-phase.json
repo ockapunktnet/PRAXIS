@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_graph": "implementation-phase.md",
+    "source_baseline": "activitys.json",
+    "window_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "cases_per_window": {
+      "1": 2,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0
+    },
+    "generated_at": "2026-03-12T18:04:25.138997+00:00",
+    "total_cases": 3
+  },
+  "fixtures_dir": "testing/test_cases/baseline/fixtures",
+  "test_cases": [
+    {
+      "name": "baseline_w1_downgrade_bpmn_to_camunda7",
+      "window_size": 1,
+      "activities": [
+        "downgrade_bpmn_to_camunda7"
+      ],
+      "question": "Run the downgrade_bpmn_to_camunda7 tool with the file 'remodel_bpmn_result.bpmn' as input.",
+      "grading_hints": "downgrade_bpmn_to_camunda7 should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named downgrade_bpmn_to_camunda7_result.bpmn or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "downgrade_bpmn_to_camunda7_result.bpmn"
+      ]
+    },
+    {
+      "name": "baseline_w1_deploy_bpmn",
+      "window_size": 1,
+      "activities": [
+        "deploy_bpmn"
+      ],
+      "question": "Run the deploy_bpmn tool with the file 'downgrade_bpmn_to_camunda7_result.bpmn' or a downgraded bpmn file as input.",
+      "grading_hints": "deploy_bpmn should have been successfully executed with 'downgrade_bpmn_to_camunda7_result.bpmn' (or similar) as the parameter, and a file named deploy_bpmn_result.json or similar should have been created.",
+      "required_fixtures": [
+        "downgrade_bpmn_to_camunda7_result.bpmn"
+      ],
+      "expected_files": [
+        "deploy_bpmn_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_downgrade_bpmn_to_camunda7__deploy_bpmn",
+      "window_size": 2,
+      "activities": [
+        "downgrade_bpmn_to_camunda7",
+        "deploy_bpmn"
+      ],
+      "question": "1. Run the downgrade_bpmn_to_camunda7 tool with the file 'remodel_bpmn_result.bpmn' as input.\n2. Run the deploy_bpmn tool with the file 'downgrade_bpmn_to_camunda7_result.bpmn' or a downgraded bpmn file as input.",
+      "grading_hints": "1. downgrade_bpmn_to_camunda7 should have been successfully executed with 'remodel_bpmn_result.bpmn' (or similar) as the parameter, and a file named downgrade_bpmn_to_camunda7_result.bpmn or similar should have been created.\n2. deploy_bpmn should have been successfully executed with 'downgrade_bpmn_to_camunda7_result.bpmn' (or similar) as the parameter, and a file named deploy_bpmn_result.json or similar should have been created.",
+      "required_fixtures": [
+        "remodel_bpmn_result.bpmn"
+      ],
+      "expected_files": [
+        "downgrade_bpmn_to_camunda7_result.bpmn",
+        "deploy_bpmn_result.json"
+      ]
+    }
+  ]
+}

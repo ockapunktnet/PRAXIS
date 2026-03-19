@@ -1,0 +1,219 @@
+{
+  "activities": [
+    "Invoice\nreceived",
+    "Assign Approver Group",
+    "Approve Invoice",
+    "Prepare\nBank\nTransfer",
+    "Invoice\napproved?",
+    "Review Invoice",
+    "Assign Reviewer",
+    "StartEvent_1",
+    "Notify Creditor",
+    "EndEvent_1og1zom",
+    "Invoice not\nprocessed",
+    "Review\nsuccessful?",
+    "Archive Invoice",
+    "Invoice\nprocessed"
+  ],
+  "activities_occurrences": {
+    "Invoice\nreceived": 32,
+    "Assign Approver Group": 32,
+    "Approve Invoice": 26,
+    "Prepare\nBank\nTransfer": 6,
+    "Invoice\napproved?": 20,
+    "Review Invoice": 18,
+    "Assign Reviewer": 10,
+    "StartEvent_1": 12,
+    "Notify Creditor": 4,
+    "EndEvent_1og1zom": 8,
+    "Invoice not\nprocessed": 8,
+    "Review\nsuccessful?": 8,
+    "Archive Invoice": 4,
+    "Invoice\nprocessed": 4
+  },
+  "dependencies": [
+    {
+      "source": "Invoice\nreceived",
+      "target": "Invoice\nreceived",
+      "dependency_value": 0.9412,
+      "frequency": 16
+    },
+    {
+      "source": "Invoice\nreceived",
+      "target": "Assign Approver Group",
+      "dependency_value": 0.9412,
+      "frequency": 16
+    },
+    {
+      "source": "Assign Approver Group",
+      "target": "Assign Approver Group",
+      "dependency_value": 0.9412,
+      "frequency": 16
+    },
+    {
+      "source": "Assign Approver Group",
+      "target": "Approve Invoice",
+      "dependency_value": 0.9412,
+      "frequency": 16
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Approve Invoice",
+      "dependency_value": 0.9091,
+      "frequency": 10
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Prepare\nBank\nTransfer",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Review Invoice",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Invoice\napproved?",
+      "dependency_value": 0.8333,
+      "frequency": 5
+    },
+    {
+      "source": "Approve Invoice",
+      "target": "Notify Creditor",
+      "dependency_value": 0.5,
+      "frequency": 1
+    },
+    {
+      "source": "Prepare\nBank\nTransfer",
+      "target": "Notify Creditor",
+      "dependency_value": 0.5,
+      "frequency": 1
+    },
+    {
+      "source": "Prepare\nBank\nTransfer",
+      "target": "Prepare\nBank\nTransfer",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    },
+    {
+      "source": "Prepare\nBank\nTransfer",
+      "target": "Archive Invoice",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    },
+    {
+      "source": "Invoice\napproved?",
+      "target": "Invoice\napproved?",
+      "dependency_value": 0.9091,
+      "frequency": 10
+    },
+    {
+      "source": "Review Invoice",
+      "target": "Review Invoice",
+      "dependency_value": 0.8889,
+      "frequency": 8
+    },
+    {
+      "source": "Review Invoice",
+      "target": "EndEvent_1og1zom",
+      "dependency_value": 0.8,
+      "frequency": 4
+    },
+    {
+      "source": "Review Invoice",
+      "target": "Invoice not\nprocessed",
+      "dependency_value": 0.75,
+      "frequency": 3
+    },
+    {
+      "source": "Review Invoice",
+      "target": "Review\nsuccessful?",
+      "dependency_value": 0.5,
+      "frequency": 1
+    },
+    {
+      "source": "Assign Reviewer",
+      "target": "Assign Reviewer",
+      "dependency_value": 0.8,
+      "frequency": 4
+    },
+    {
+      "source": "Assign Reviewer",
+      "target": "Review Invoice",
+      "dependency_value": 0.8,
+      "frequency": 4
+    },
+    {
+      "source": "StartEvent_1",
+      "target": "StartEvent_1",
+      "dependency_value": 0.8571,
+      "frequency": 6
+    },
+    {
+      "source": "Notify Creditor",
+      "target": "Notify Creditor",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    },
+    {
+      "source": "Notify Creditor",
+      "target": "Invoice\napproved?",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    },
+    {
+      "source": "EndEvent_1og1zom",
+      "target": "EndEvent_1og1zom",
+      "dependency_value": 0.8,
+      "frequency": 4
+    },
+    {
+      "source": "Invoice not\nprocessed",
+      "target": "Invoice not\nprocessed",
+      "dependency_value": 0.8,
+      "frequency": 4
+    },
+    {
+      "source": "Review\nsuccessful?",
+      "target": "Review\nsuccessful?",
+      "dependency_value": 0.8,
+      "frequency": 4
+    },
+    {
+      "source": "Archive Invoice",
+      "target": "Archive Invoice",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    },
+    {
+      "source": "Archive Invoice",
+      "target": "Invoice\nprocessed",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    },
+    {
+      "source": "Invoice\nprocessed",
+      "target": "Invoice\nprocessed",
+      "dependency_value": 0.6667,
+      "frequency": 2
+    }
+  ],
+  "start_activities": {
+    "Invoice\nreceived": 16,
+    "Assign Reviewer": 2,
+    "StartEvent_1": 4
+  },
+  "end_activities": {
+    "Approve Invoice": 6,
+    "Invoice\napproved?": 4,
+    "StartEvent_1": 2,
+    "EndEvent_1og1zom": 4,
+    "Review\nsuccessful?": 3,
+    "Invoice\nprocessed": 2,
+    "Invoice not\nprocessed": 1
+  },
+  "dependency_threshold": 0.5
+}

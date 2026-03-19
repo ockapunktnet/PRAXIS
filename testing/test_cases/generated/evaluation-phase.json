@@ -1,0 +1,453 @@
+{
+  "metadata": {
+    "source_graph": "evaluation-phase.md",
+    "source_baseline": "activitys.json",
+    "window_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "cases_per_window": {
+      "1": 5,
+      "2": 7,
+      "3": 7,
+      "4": 4,
+      "5": 1,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0
+    },
+    "generated_at": "2026-03-12T18:02:56.062070+00:00",
+    "total_cases": 24
+  },
+  "fixtures_dir": "testing/test_cases/baseline/fixtures",
+  "test_cases": [
+    {
+      "name": "baseline_w1_export_event_log",
+      "window_size": 1,
+      "activities": [
+        "export_event_log"
+      ],
+      "question": "Run the export_event_log tool with the process definition key 'invoice'.",
+      "grading_hints": "export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv"
+      ]
+    },
+    {
+      "name": "baseline_w1_analyze_event_log",
+      "window_size": 1,
+      "activities": [
+        "analyze_event_log"
+      ],
+      "question": "Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "analyze_event_log_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w1_discover_heuristic_net",
+      "window_size": 1,
+      "activities": [
+        "discover_heuristic_net"
+      ],
+      "question": "Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "discover_heuristic_net_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w1_discover_dfg",
+      "window_size": 1,
+      "activities": [
+        "discover_dfg"
+      ],
+      "question": "Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "discover_dfg_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w1_render_dfg",
+      "window_size": 1,
+      "activities": [
+        "render_dfg"
+      ],
+      "question": "Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [
+        "discover_dfg_result.json"
+      ],
+      "expected_files": [
+        "render_dfg_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w2_export_event_log__analyze_event_log",
+      "window_size": 2,
+      "activities": [
+        "export_event_log",
+        "analyze_event_log"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "analyze_event_log_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_export_event_log__discover_heuristic_net",
+      "window_size": 2,
+      "activities": [
+        "export_event_log",
+        "discover_heuristic_net"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "discover_heuristic_net_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_export_event_log__discover_dfg",
+      "window_size": 2,
+      "activities": [
+        "export_event_log",
+        "discover_dfg"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "discover_dfg_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_analyze_event_log__discover_heuristic_net",
+      "window_size": 2,
+      "activities": [
+        "analyze_event_log",
+        "discover_heuristic_net"
+      ],
+      "question": "1. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n2. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n2. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "analyze_event_log_result.json",
+        "discover_heuristic_net_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_analyze_event_log__discover_dfg",
+      "window_size": 2,
+      "activities": [
+        "analyze_event_log",
+        "discover_dfg"
+      ],
+      "question": "1. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n2. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n2. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "analyze_event_log_result.json",
+        "discover_dfg_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_discover_heuristic_net__discover_dfg",
+      "window_size": 2,
+      "activities": [
+        "discover_heuristic_net",
+        "discover_dfg"
+      ],
+      "question": "1. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.\n2. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.\n2. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "discover_heuristic_net_result.json",
+        "discover_dfg_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w2_discover_dfg__render_dfg",
+      "window_size": 2,
+      "activities": [
+        "discover_dfg",
+        "render_dfg"
+      ],
+      "question": "1. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.\n2. Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "1. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.\n2. render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "discover_dfg_result.json",
+        "render_dfg_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w3_export_event_log__analyze_event_log__discover_heuristic_net",
+      "window_size": 3,
+      "activities": [
+        "export_event_log",
+        "analyze_event_log",
+        "discover_heuristic_net"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n3. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "analyze_event_log_result.json",
+        "discover_heuristic_net_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_export_event_log__analyze_event_log__discover_dfg",
+      "window_size": 3,
+      "activities": [
+        "export_event_log",
+        "analyze_event_log",
+        "discover_dfg"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n3. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "analyze_event_log_result.json",
+        "discover_dfg_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_export_event_log__discover_heuristic_net__discover_dfg",
+      "window_size": 3,
+      "activities": [
+        "export_event_log",
+        "discover_heuristic_net",
+        "discover_dfg"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.\n3. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "discover_heuristic_net_result.json",
+        "discover_dfg_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_export_event_log__discover_dfg__render_dfg",
+      "window_size": 3,
+      "activities": [
+        "export_event_log",
+        "discover_dfg",
+        "render_dfg"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.\n3. Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.\n3. render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "discover_dfg_result.json",
+        "render_dfg_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w3_analyze_event_log__discover_heuristic_net__discover_dfg",
+      "window_size": 3,
+      "activities": [
+        "analyze_event_log",
+        "discover_heuristic_net",
+        "discover_dfg"
+      ],
+      "question": "1. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n2. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n2. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.\n3. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "analyze_event_log_result.json",
+        "discover_heuristic_net_result.json",
+        "discover_dfg_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w3_analyze_event_log__discover_dfg__render_dfg",
+      "window_size": 3,
+      "activities": [
+        "analyze_event_log",
+        "discover_dfg",
+        "render_dfg"
+      ],
+      "question": "1. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n2. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.\n3. Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "1. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n2. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.\n3. render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "analyze_event_log_result.json",
+        "discover_dfg_result.json",
+        "render_dfg_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w3_discover_heuristic_net__discover_dfg__render_dfg",
+      "window_size": 3,
+      "activities": [
+        "discover_heuristic_net",
+        "discover_dfg",
+        "render_dfg"
+      ],
+      "question": "1. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.\n2. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.\n3. Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "1. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.\n2. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.\n3. render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "discover_heuristic_net_result.json",
+        "discover_dfg_result.json",
+        "render_dfg_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w4_export_event_log__analyze_event_log__discover_heuristic_net__discover_dfg",
+      "window_size": 4,
+      "activities": [
+        "export_event_log",
+        "analyze_event_log",
+        "discover_heuristic_net",
+        "discover_dfg"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.\n4. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n3. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.\n4. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "analyze_event_log_result.json",
+        "discover_heuristic_net_result.json",
+        "discover_dfg_result.json"
+      ]
+    },
+    {
+      "name": "baseline_w4_export_event_log__analyze_event_log__discover_dfg__render_dfg",
+      "window_size": 4,
+      "activities": [
+        "export_event_log",
+        "analyze_event_log",
+        "discover_dfg",
+        "render_dfg"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.\n4. Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n3. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.\n4. render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "analyze_event_log_result.json",
+        "discover_dfg_result.json",
+        "render_dfg_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w4_export_event_log__discover_heuristic_net__discover_dfg__render_dfg",
+      "window_size": 4,
+      "activities": [
+        "export_event_log",
+        "discover_heuristic_net",
+        "discover_dfg",
+        "render_dfg"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.\n4. Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.\n3. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.\n4. render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "discover_heuristic_net_result.json",
+        "discover_dfg_result.json",
+        "render_dfg_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w4_analyze_event_log__discover_heuristic_net__discover_dfg__render_dfg",
+      "window_size": 4,
+      "activities": [
+        "analyze_event_log",
+        "discover_heuristic_net",
+        "discover_dfg",
+        "render_dfg"
+      ],
+      "question": "1. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n2. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.\n4. Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "1. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n2. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.\n3. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.\n4. render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [
+        "export_event_log_result.csv"
+      ],
+      "expected_files": [
+        "analyze_event_log_result.json",
+        "discover_heuristic_net_result.json",
+        "discover_dfg_result.json",
+        "render_dfg_result.png"
+      ]
+    },
+    {
+      "name": "baseline_w5_export_event_log__analyze_event_log__discover_heuristic_net__discover_dfg__render_dfg",
+      "window_size": 5,
+      "activities": [
+        "export_event_log",
+        "analyze_event_log",
+        "discover_heuristic_net",
+        "discover_dfg",
+        "render_dfg"
+      ],
+      "question": "1. Run the export_event_log tool with the process definition key 'invoice'.\n2. Run the analyze_event_log tool with the file 'export_event_log_result.csv' as input.\n3. Run the discover_heuristic_net tool with the file 'export_event_log_result.csv' as input.\n4. Run the discover_dfg tool with the file 'export_event_log_result.csv' as input.\n5. Run the render_dfg tool with the file 'discover_dfg_result.json' as input.",
+      "grading_hints": "1. export_event_log should have been successfully executed with 'invoice' as the parameter, and a file named export_event_log_result.csv or similar should have been created.\n2. analyze_event_log should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named analyze_event_log_result.json or similar should have been created.\n3. discover_heuristic_net should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_heuristic_net_result.json or similar should have been created.\n4. discover_dfg should have been successfully executed with 'export_event_log_result.csv' (or similar) as the parameter, and a file named discover_dfg_result.json or similar should have been created.\n5. render_dfg should have been successfully executed with 'discover_dfg_result.json' (or similar) as the parameter, and a file named render_dfg_result.png or similar should have been created.",
+      "required_fixtures": [],
+      "expected_files": [
+        "export_event_log_result.csv",
+        "analyze_event_log_result.json",
+        "discover_heuristic_net_result.json",
+        "discover_dfg_result.json",
+        "render_dfg_result.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# LLM / Agent framework
+langchain>=1.2
+langchain-openai>=1.1
+langchain-mcp-adapters>=0.1.0
+langgraph>=1.0
+langgraph-cli[inmem]>=0.4
+langgraph-prebuilt>=1.0
+langsmith>=0.6
+
+# Data & visualization
+pandas>=2.0
+numpy>=2.0
+matplotlib>=3.10
+
+# Process mining
+pm4py
+
+# Utilities
+pydantic>=2.0
+python-dotenv>=1.0
+httpx>=0.28
+typing_extensions>=4.0
+json_repair
